@@ -1,0 +1,63 @@
+package projects;
+import java.util.Scanner;
+
+public class NumberGuessingGame {
+
+    public static void main(String[] args) {
+        // Entry point of the program
+        playGame(); // Calling the method to start the game
+    }
+
+    // Method to start the game
+    private static void playGame() {
+        // Generate a random number between 1 and 100
+        int randomNumber = generateRandomNumber();
+        int numberOfAttempts = 0; // Variable to count the number of attempts made by the user
+
+        // Display welcome message and instructions
+        System.out.println("\nWelcome to the Number Guessing Game!");
+        System.out.println("\nI have selected a number between 1 and 100. Can you guess it?");
+        System.out.println("\nSystem Generated Number is" + randomNumber); // Display the generated number (for debugging)
+
+        Scanner scanner = new Scanner(System.in); // Create a Scanner object to take user input
+
+        // Loop until the user guesses the correct number or runs out of attempts
+        do {
+            int userGuess = getUserGuess(scanner); // Get user's guess
+            numberOfAttempts++; // Increment the number of attempts made by the user
+
+            // Check if the user's guess is correct
+            if (userGuess == randomNumber) {
+                System.out.println("\nCongratulations! You guessed the correct number: " + randomNumber);
+                break; // Exit the loop if the guess is correct
+            } else if (userGuess > randomNumber) {
+                System.out.println("\nYour guess is too high."); // Inform the user that the guess is too high
+            } else {
+                System.out.println("\nYour guess is too low."); // Inform the user that the guess is too low
+            }
+
+            // Check if the user has exceeded the maximum number of attempts
+            if (numberOfAttempts >= 3) {
+                System.out.println("\nSorry, you ran out of attempts. The correct number is: " + randomNumber);
+                break; // Exit the loop if the user runs out of attempts
+            }
+        } while (true); // Loop indefinitely until the user guesses the correct number or runs out of attempts
+
+        scanner.close(); // Close the Scanner object to prevent resource leak
+    }
+
+    // Method to generate a random number between 1 and 100
+    private static int generateRandomNumber() {
+        return (int) (Math.random() * 100.0) + 1;
+    }
+
+    // Method to get user's guess
+    private static int getUserGuess(Scanner scanner) {
+        System.out.print("\nEnter your guess (between 1 and 100): "); // Prompt the user to enter a guess
+        while (!scanner.hasNextInt()) { // Validate user input to ensure it's an integer
+            System.out.print("Please enter a valid integer: "); // Prompt the user to enter a valid integer
+            scanner.next(); // Read and discard the invalid input
+        }
+        return scanner.nextInt(); // Return the user's guess
+    }
+}
