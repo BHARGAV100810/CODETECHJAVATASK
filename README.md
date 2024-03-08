@@ -1,5 +1,5 @@
 # CODETECHJAVATASK
-Simple Calculator (TASK -1)
+Simple Calculator (TASK -1).
 1. Introduction
 The Simple Calculator program is a Java application designed to perform basic arithmetic operations. It provides users with a straightforward interface to input two numbers and choose an operation to apply to them.
 
@@ -60,9 +60,9 @@ Due to the limitations of floating-point arithmetic, the program may exhibit sli
 
 This documentation provides a comprehensive overview of the Simple Calculator program, including its features, usage instructions, error handling, example, dependencies, and limitations.
 
+========================================================================================================================================================================================================================================================================================================================================================================================================================================
 
-
-NUMBER GUESSING GAME  (TASK-2)
+NUMBER GUESSING GAME  (TASK-2).
 1. Introduction
 The Number Guessing Game is a Java application that allows users to guess a randomly generated number between 1 and 100. The game provides feedback to the user after each guess, informing them whether their guess is too high, too low, or correct. The game ends when the user guesses the correct number or runs out of attempts.
 
@@ -103,6 +103,50 @@ The game informs the user that their guess is too low.
 The user enters their final guess, for example, 47.
 The game congratulates the user for guessing the correct number.
 
+========================================================================================================================================================================================================================================================================================================================================================================================================================================
+
+Tic-Tac-Toe Game (TASK-3).
+1. Introduction
+The Tic-Tac-Toe game is a two-player strategy game played on a 3x3 grid. Players take turns placing their marks ('X' or 'O') on the grid, aiming to form a horizontal, vertical, or diagonal line of their marks to win the game. This Java implementation allows two players to play against each other on the same console.
+
+2. Features
+Dynamic Game Board: The game board is represented as a 3x3 grid, allowing players to place their marks in empty cells.
+Player Input Validation: The game validates user input to ensure it falls within the range of valid grid coordinates and that the chosen cell is not already occupied.
+Win Detection: After each move, the game checks for winning conditions to determine if a player has won by forming a line of their marks.
+Alternate Turns: Players take turns placing their marks on the board until one player wins or the game ends in a draw.
+3. Usage
+Starting the Game
+
+Run the program to start the Tic-Tac-Toe game.
+The initial game board will be displayed, with empty cells denoted by spaces (' ').
+Gameplay
+
+Players take turns entering the row and column coordinates to place their marks ('X' or 'O') on the grid.
+Input the row and column numbers when prompted to make a move.
+The game alternates between players until one player wins or the game ends in a draw.
+Winning the Game
+
+The game checks for winning conditions after each move to determine if a player has won.
+A player wins by forming a horizontal, vertical, or diagonal line of their marks on the grid.
+Ending the Game
+
+The game ends when one player wins or when all cells on the grid are filled (resulting in a draw).
+After the game ends, the final game board is displayed along with the outcome (win or draw).
+4. Implementation Details
+Game Board Initialization: At the start of the game, a 3x3 grid is created and initialized with empty spaces (' ').
+Player Turns: Players take turns placing their marks on the board. The game alternates between 'X' and 'O' players.
+Win Detection: The game checks for winning conditions by examining rows, columns, and diagonals after each move.
+Input Validation: User input is validated to ensure it falls within the valid range and that the chosen cell is empty.
+Game Loop: The main game loop continues until one player wins or the game ends in a draw.
+5. Example
+Suppose Player 1 ('X') wins the game:
+
+The game starts with an empty grid.
+Players take turns entering their moves ('X' or 'O') until one player forms a winning line.
+Player 1 ('X') forms a horizontal line of 'X' marks on the top row.
+The game declares Player 1 ('X') as the winner and displays the final game board.
+6. Dependencies
+The Tic-Tac-Toe game program does not have any external dependencies. It utilizes only the standard Java libraries for input/output operations and array manipulation.
 
 
 
