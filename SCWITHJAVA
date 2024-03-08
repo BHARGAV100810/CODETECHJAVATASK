@@ -1,0 +1,60 @@
+package projects;
+import java.util.Scanner;
+
+public class simpleCalculator {
+    public static void main(String[] args) {
+        // Create a Scanner object to take input from the user
+        Scanner sc = new Scanner(System.in);
+        
+        // Displaying options for the user
+        System.out.println("!!Simple Calculator!!");
+        System.out.println("1: Addition       [+] ");
+        System.out.println("2: Subtraction    [-] ");
+        System.out.println("3: Multiplication [*] ");
+        System.out.println("4: Division       [/] ");
+        System.out.println("Enter a Number : ");
+        
+        // Read the choice of operation from the user
+        int choice= sc.nextInt();
+        
+        // Prompt the user to enter the numbers
+        System.out.println("Enter First Number : ");
+        double Number1 = sc.nextDouble();
+        System.out.println("Enter Second Number: ");
+        double Number2 = sc.nextDouble();
+        
+        // Variable to store the result of the calculation
+        double Answer=0;
+        
+        // Switch case to perform the selected operation
+        switch(choice){
+            case 1: // Addition
+                Answer = Number1 + Number2;
+                break;
+            case 2: // Subtraction
+                Answer = Number1 - Number2;
+                break;
+            case 3: // Multiplication
+                Answer = Number1 * Number2;
+                break;
+            case 4: // Division
+                // Check if the second number is not zero to avoid division by zero error
+                if(Number2!=0) {
+                    Answer = Number1 / Number2;
+                } else {
+                    // If the second number is zero, display an error message and terminate the program
+                    System.out.println("ERROR");
+                    System.out.println("cannot divide by zero");
+                    return;
+                }
+                break;
+            default:
+                // Display an error message for an invalid choice
+                System.out.println("Enter valid Number");
+                break;
+        }
+        
+        // Display the result of the calculation
+        System.out.println("Result: "+Answer);
+    }
+}
